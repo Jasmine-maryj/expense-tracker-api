@@ -38,7 +38,7 @@ public class TransactionController {
         return new ResponseEntity<>(transaction, HttpStatus.OK);
     }
 
-    @PostMapping("")
+    @GetMapping("")
     public ResponseEntity<List<Transaction>> getAllTransactions(HttpServletRequest request, @PathVariable("categoryId") Integer categoryId){
         int userId = (Integer) request.getAttribute("userId");
         List<Transaction> transactions = transactionService.fetchAllTransactions(userId, categoryId);
